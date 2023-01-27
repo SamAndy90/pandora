@@ -1,0 +1,82 @@
+@media (max-width: $mobile) {
+    body.lock {
+        overflow: hidden;
+    }
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+ 
+        &__burger {
+            display: block;
+            position: relative;
+            width: 22px;
+            height: 13px;
+            z-index: 3;
+            & span {
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                top: 6px;
+                background-color: $mainColor;
+                transition: all 0.3s ease;
+            }
+            &::after,
+            &::before {
+                content: ("");
+                background-color: $mainColor;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+            &::after {
+                bottom: 0;
+            }
+            &::before {
+                top: 0;
+            }
+            &.active span {
+                transform: scale(0);
+            }
+            &.active::before {
+                transform: rotate(-45deg);
+                top: 6px;
+            }
+            &.active::after {
+                transform: rotate(45deg);
+                bottom: 6px;
+            }
+    
+            &-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: $bgColor;
+                transition: all 0.3s ease;
+                overflow: auto;
+            }
+            &-menu.active {
+                left: 0;
+            }
+            // &__list {
+            //     display: block;
+            //     flex-direction: column;
+            //     text-align: center;
+            //     padding-top: 80px;
+            // }
+            // &__list li {
+            //     margin: 0 0 20px 0;
+            // }
+            // &__link {
+            //     font-size: 24px;
+            //     line-height: 48px;
+            // }
+        }
+    }
+}

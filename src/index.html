@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Pandora"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html', {})
+        <main class="page">
+            <section id="main" class="page__main main">
+                <div class="main__container">
+                    <div class="main__body">
+                        <div class="main__gallery">
+                            <div class="main__gallery--wrapper">
+                                <div class="main__gallery-item">
+                                    <img src="@img/2022-12-03 13.53.png" alt="">
+                                </div>
+                                <div class="main__gallery-item">
+                                    <img src="@img/2022-12-03 13.53-1.png" alt="">
+                                </div>
+                                <div class="main__gallery-item">
+                                    <img src="@img/2022-12-03 13.53 5.png" alt="">
+                                </div>
+                                <div class="main__gallery-item">
+                                    <img src="@img/2022-12-03 13.53 6.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+
+                        <div class="main__content">
+                            <div class="main__product-info product-info">
+                                <h2 class="product-info__subtitle">NOVITÀ | RISPARMIA 57€</h2>
+                                <h1 class="product-info__title">Set Bracciale Sogna in
+                                    Grande</h1>
+                                <div class="product-info__prices">
+                                    <span class="product-info__prev-price">€ 236,00</span>
+                                    <span class="product-info__price">€ 179,00</span>
+                                </div>
+                                <p class="product-info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer malesuada nunc vel risus commodo viverra. Leo in vitae turpis massa sed elementum tempus egestas. Augue neque gravida in fermentum et sollicitudin ac. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin. Massa massa ultricies mi quis hendrerit dolor magna eget est. Urna et pharetra pharetra massa massa ultricies mi.</p>                                
+                            </div>
+
+                            <div class="main__questionnaire questionnaire">
+                                <div class="questionnaire__title">Domanda 
+                                    <span id="num">1</span>/
+                                    <span id="nums">3</span>:
+                                </div>
+                                <p class="questionnaire__question">Avete mai usato un Set Bracciale Sogna in Grande?</p>
+                                <div class="questionnaire__line"></div>
+                                <div class="questionnaire__buttons">
+                                    <button type="submit" id="questionnaire__btn-yes" class="questionnaire__btn-yes">Sì</button>
+                                    <button type="submit" id="questionnaire__btn-no" class="questionnaire__btn-no">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="feedback">feedback</button>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

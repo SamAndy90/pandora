@@ -1,0 +1,189 @@
+.page {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    @media (max-width: $mobile) {
+            margin-top: 90px;
+    }
+}
+.main {
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    &__gallery {
+        flex: 0 1 60%;
+        &--wrapper {
+            max-width: 820px;
+            display: flex;
+            flex-wrap: wrap;
+            @include adaptive-value ('gap', 20, 10, 1);
+            @include adaptive-value ('row-gap', 20, 10, 1);
+            @media (max-width: $tablet) {
+            }
+        }
+
+        &-item {
+            position: relative;
+            flex: 0 1 48%;
+            width: 400px;
+            height: 400px;
+            @media (max-width: $tablet) {
+                flex: 0 1 100%;
+            }
+    
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &__content {
+        margin-top: 20px;
+        max-width: 330px;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+        flex: 1 1 40%;
+        @include adaptive-value("margin-right", 95, 0, 1);
+    }
+
+    &__product-info {
+        max-width: 301px;
+        margin-bottom: 30px;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+
+    }
+    &__questionnaire {
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+}
+
+.product-info {
+    &__subtitle {
+        color: $grey;
+        font-family: 'Pan Display';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1.25px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32.5px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__prices {
+        font-size: 12px;
+        font-weight: 400;
+        gap: 15px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    &__prev-price {
+    }
+    &__price {
+        color: $pink;
+    }
+    &__description {
+        line-height: 18px;
+        font-weight: 400;
+    }
+}
+
+.questionnaire {
+    &__title {
+        font-weight: 900;
+        margin-bottom: 4px;
+    }
+    &__question {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &__line {
+        background-color: #F5F5F5;
+        height: 2px;
+        max-width: 330px;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+        margin-bottom: 20px;
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__btn-yes,
+    &__btn-no {
+        max-width: 330px;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+        height: 45px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    &__btn-yes {
+        color: #FFFFFF;
+        background: $mainColor;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: black;
+        }
+    }
+    &__btn-no {
+        color: $mainColor;
+        background: $lightPink;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #ffb0bf;
+        }
+    }
+}
+
+.feedback {
+    position: fixed;
+    @include adaptive-value("width", 127, 108, 1);
+    @include adaptive-value("height", 37, 30, 1);
+    @include adaptive-value("top", 280, 323, 1);
+    right: 0;
+    transform: translate(100%) rotate(90deg);
+    transform-origin: left top;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: #FFFFFF;
+    border: 1px solid #B4B4B4;
+    border-top: none;
+    border-radius: 0px 0px 3px 3px;
+}
+
+.swiper {
+    height: 330px;
+}
+
+@media (min-width: 1200px) {
+    .swiper-pagination,
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
