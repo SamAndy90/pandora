@@ -7,21 +7,6 @@ saFunctions.isWebp();
 import './modules/burger.js';
 
 
-// ========  PLAYER  ========================================================
-// import './modules/player.js';
-
-
-// ========  SWIPER  ========================================================
-// import Swiper, { Autoplay, Keyboard, Navigation } from 'swiper';
-// import './modules/mySwiper.js';
-
-// document.querySelector('.prev').onclick = () => {
-// 	swiper.slidePrev();
-// }
-// document.querySelector('.next').onclick = () => {
-// 	swiper.slideNext();
-// }
-
 const yes = document.getElementById('questionnaire__btn-yes');
 const no = document.getElementById('questionnaire__btn-no');
 const num = document.getElementById('num');
@@ -51,44 +36,47 @@ if(window.innerWidth < 1200) {
     swiperWrapper.classList.add('swiper-wrapper');
     swiperSlide.forEach((el) => {
         el.classList.add('swiper-slide');
+    });
+    swiperBody.classList.remove('main__gallery');
+    swiperWrapper.classList.remove('main__gallery--wrapper');
+    swiperSlide.forEach((el) => {
+        el.classList.remove('main__gallery-item');
     })
 } else {
     swiperBody.classList.remove('swiper');
     swiperWrapper.classList.remove('swiper-wrapper');
     swiperSlide.forEach((el) => {
         el.classList.remove('swiper-slide');
+    });
+    swiperBody.classList.add('main__gallery');
+    swiperWrapper.classList.add('main__gallery--wrapper');
+    swiperSlide.forEach((el) => {
+        el.classList.add('main__gallery-item');
     })
+
 }
 
 
-import Swiper, { Autoplay, Keyboard, Navigation } from 'swiper';
+import Swiper, { Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 
 const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Autoplay, Keyboard],
+    modules: [Navigation, Autoplay, Keyboard, Pagination],
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
     },
 
     loop: true,
     slidesPerView: 1,
 	speed: 1000,
-    watchOverflow: true,
-
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        480: {
-            slidesPerView: 1,
-        },
-        992: {
-            slidesPerView: 1,
-        },
-    },
+    watchOverflow: false,
 
     autoplay: {
-        delay: 2000,
+        delay: 3000,
         stopOnLastSlide: false,
         disableOnInteraction: false,
     },

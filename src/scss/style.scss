@@ -146,8 +146,5 @@ body {
 // Підключення стилів компонентів сторінки
 @import 'components/header';
 @import 'components/burger';
-@import 'components/_main';
 @import '../../node_modules/swiper/swiper-bundle';
-
-
-// @import '../../node_modules/swiper/swiper-bundle';
+@import 'components/_main';
