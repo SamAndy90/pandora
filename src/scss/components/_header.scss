@@ -1,5 +1,5 @@
 .header {
-    background: rgb(255, 255, 255);
+    background-color: #fff;
     &__body {
         display: flex;
         align-items: center;
@@ -22,8 +22,6 @@
         display: none;
     }
 
-    &__logo {
-    }
     &__logo--link {
         display: block;
         @include adaptive-value("height", 30, 26, 1);
@@ -56,17 +54,20 @@
         padding: 0;
         padding-left: 40px;
         box-sizing: border-box;
-        transition: all ease 0.3s;
+        transition: all 0.3s ease;
+        background: url("@img/Vector-3.svg") 10px center / 19px no-repeat;
         &:focus {
             border-color: #b4b4b4;
-            background: url("@img/Vector-3.svg") 6px center / 0px no-repeat;
+            background: url("@img/Vector-3.svg") 10px center / 0px no-repeat;
             padding-left: 10px;
+            &::placeholder {
+                color: transparent;
+            }
         }
-        background: url("@img/Vector-3.svg") 6px center / 26px no-repeat;
         &::placeholder {
             color: #b4b4b4;
             text-transform: uppercase;
-            font-family: "Gill Sans";
+            font-family: GillSansNova;
             font-weight: 500;
             font-size: 12px;
             letter-spacing: 0.155em;
