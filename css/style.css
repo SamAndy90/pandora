@@ -1,6 +1,26 @@
-@charset "UTF-8";
+@font-face {
+  font-family: GillSansNova;
+  font-display: swap;
+  src: url("../fonts/GillSansNova-Medium.woff2") format("woff2"), url("../fonts/GillSansNova-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
 
-@import url("//db.onlinewebfonts.com/c/8f0df2cb0f7181e0f37615026d9bfce3?family=Pan+Display&display=swap");
+@font-face {
+  font-family: Pan Display;
+  font-display: swap;
+  src: url("../fonts/Pan Display Bold.woff2") format("woff2"), url("../fonts/Pan Display Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Pan Display;
+  font-display: swap;
+  src: url("../fonts/Pan Display Regular.woff2") format("woff2"), url("../fonts/Pan Display Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
 html,
 body {
@@ -82,11 +102,6 @@ button {
           flex: 1 1 auto;
 }
 
-/*
-(i) Стилі будуть застосовуватисю до всіх класів, що містять *__container
-Наприклад: header__container, main__container.
-*/
-
 [class*=__container] {
   max-width: 82.5rem;
   -webkit-box-sizing: content-box;
@@ -98,12 +113,13 @@ button {
 body {
   font-family: "Pan Display", sans-serif;
   font-size: 0.875rem;
+  font-weight: 400;
   background: #ffffff;
   color: #27251F;
 }
 
 .header {
-  background: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
 .header__body {
@@ -179,22 +195,42 @@ body {
   padding-left: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-  background: url("../img/Vector-3.svg") 6px center/26px no-repeat;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: url("../img/Vector-3.svg") 10px center/19px no-repeat;
 }
 
 .header__search:focus {
   border-color: #b4b4b4;
-  background: url("../img/Vector-3.svg") 6px center/0px no-repeat;
+  background: url("../img/Vector-3.svg") 10px center/0px no-repeat;
   padding-left: 10px;
+}
+
+.header__search:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.header__search:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.header__search:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.header__search:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.header__search:focus::placeholder {
+  color: transparent;
 }
 
 .header__search::-webkit-input-placeholder {
   color: #b4b4b4;
   text-transform: uppercase;
-  font-family: "Gill Sans";
+  font-family: GillSansNova;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.155em;
@@ -203,7 +239,7 @@ body {
 .header__search::-moz-placeholder {
   color: #b4b4b4;
   text-transform: uppercase;
-  font-family: "Gill Sans";
+  font-family: GillSansNova;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.155em;
@@ -212,7 +248,7 @@ body {
 .header__search:-ms-input-placeholder {
   color: #b4b4b4;
   text-transform: uppercase;
-  font-family: "Gill Sans";
+  font-family: GillSansNova;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.155em;
@@ -221,7 +257,7 @@ body {
 .header__search::-ms-input-placeholder {
   color: #b4b4b4;
   text-transform: uppercase;
-  font-family: "Gill Sans";
+  font-family: GillSansNova;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.155em;
@@ -230,7 +266,7 @@ body {
 .header__search::placeholder {
   color: #b4b4b4;
   text-transform: uppercase;
-  font-family: "Gill Sans";
+  font-family: GillSansNova;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.155em;
@@ -1184,7 +1220,7 @@ button.swiper-pagination-bullet {
 }
 
 .main__gallery--wrapper {
-  max-width: 820px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1199,7 +1235,7 @@ button.swiper-pagination-bullet {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 48%;
           flex: 0 1 48%;
-  width: 400px;
+  max-width: 400px;
   height: 400px;
 }
 
@@ -1229,7 +1265,6 @@ button.swiper-pagination-bullet {
 
 .product-info__subtitle {
   color: #71706C;
-  font-family: "Pan Display";
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -1269,18 +1304,15 @@ button.swiper-pagination-bullet {
 
 .product-info__description {
   line-height: 18px;
-  font-weight: 400;
 }
 
 .questionnaire__title {
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
 .questionnaire__question {
   margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: 400;
 }
 
 .questionnaire__line {
@@ -1352,6 +1384,7 @@ button.swiper-pagination-bullet {
   border: 1px solid #b4b4b4;
   border-top: none;
   border-radius: 0px 0px 3px 3px;
+  cursor: pointer;
 }
 
 .swiper {
