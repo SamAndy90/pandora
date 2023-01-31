@@ -170,6 +170,7 @@
     border: 1px solid #b4b4b4;
     border-top: none;
     border-radius: 0px 0px 3px 3px;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -178,13 +179,13 @@
     @media (max-width: $tablet) {
         width: 100%;
     }
-}
-.swiper-slide {
-    height: auto;
-    & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    &-slide {
+        height: auto;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
@@ -211,7 +212,9 @@
 .swiper-button-next::after {
     content: "";
 }
-
-.swiper-pagination-bullet-active {
-    color: #ffb0bf;
+.swiper-pagination-bullet {
+    background: #aaaaaa;
+    &-active {
+        background: #ffb0bf;
+    }
 }
