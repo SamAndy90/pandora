@@ -1384,6 +1384,7 @@ button.swiper-pagination-bullet {
   border: 1px solid #b4b4b4;
   border-top: none;
   border-radius: 0px 0px 3px 3px;
+  z-index: 10;
   cursor: pointer;
 }
 
@@ -1423,8 +1424,12 @@ button.swiper-pagination-bullet {
   content: "";
 }
 
+.swiper-pagination-bullet {
+  background: #aaaaaa;
+}
+
 .swiper-pagination-bullet-active {
-  color: #ffb0bf;
+  background: #ffb0bf;
 }
 
 @media (min-width: 47.99875em) {
